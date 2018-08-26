@@ -30,10 +30,7 @@ function maskify(cc) {
 }
 
 
-
 // =========================================================================================================
-// =========================================================================================================
-
 
 
 // Your task is to write a function which returns the sum of following series upto nth term(parameter).
@@ -72,7 +69,9 @@ function SeriesSum(n) {
     return s.toFixed(2);
 }
 
+
 // ==========================================================================================================
+
 
 // Count the number of Duplicates
 
@@ -88,20 +87,33 @@ function SeriesSum(n) {
 // "ABBA" -> 2 # 'A' and 'B' each occur twice
 
 
-
+// MY SOLUTION
 function duplicates(str) {
-    return str.toLowerCase().split("").sort();   
-   
-    for (let i, dup = 0; sorted[i + 1] === sorted[i];){
-        
+    let sortedArray = str.toLowerCase().split("").sort();
+    let foundDuplicatesArray = [];
+    for(let i = 0; i < sortedArray.length - 1; i++ ) {
+      // compares next index to current AND if index was not found in foundDuplicatesArray
+      if(sortedArray[i + 1] === sortedArray[i] && foundDuplicatesArray.indexOf(sortedArray[i]) == -1) {
+        foundDuplicatesArray.push(sortedArray[i]);
+        }
     }
-   }
-   
-   // iterate through length and compare indexes
-   // for (var i = 0; i < sorted_arr.length - 1; i++) {
-   //     if (sorted_arr[i + 1] == sorted_arr[i]) {
-   //         results.push(sorted_arr[i]);
-   //     }
-   
-   
-duplicates("Hello all");
+    return foundDuplicatesArray.length;
+}
+  
+duplicates("Hello World");
+
+
+// BEST SOLUTION - don't completely understand the regex part ???
+function duplicateCount(text){
+    return (text.toLowerCase().split('').sort().join('').match(/([^])\1+/g) || []).length;
+}
+
+// 2ND BEST SOLUTION
+function duplicateCount(text){
+    return text.toLowerCase().split('').filter(function(val, i, arr){
+      return arr.indexOf(val) !== i && arr.lastIndexOf(val) === i;
+    }).length;
+}
+
+
+// ==========================================================================================================

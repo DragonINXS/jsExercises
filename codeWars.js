@@ -12,7 +12,7 @@
 // maskify("Skippy")                                   == "##ippy"
 // maskify("Nananananananananananananananana Batman!") == "####################################man!"
 
-// my solution
+// MY SOLUTION
 function maskify (str) {
     if(str.length > 4){
         let newStr = str.substring(str.length - 4);
@@ -24,7 +24,7 @@ function maskify (str) {
 
 maskify("87638476237868777777");
 
-// best solution - pretty clever
+// BEST SOLUTION
 function maskify(cc) {
     return cc.slice(0, -4).replace(/./g, '#') + cc.slice(-4);
 }
@@ -65,7 +65,6 @@ function SeriesSum(n) {
     for (var s = 0, i = 0; i < n; i++) {
         s += 1 / (1 + i * 3);
     }
-    
     return s.toFixed(2);
 }
 

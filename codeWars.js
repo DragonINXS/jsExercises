@@ -126,4 +126,10 @@ function duplicateCount(text){
 
 // n being the length of the string array, if n = 0 or k > n or k <= 0 return "".
 
-// take k -> arr.length    arr[length] -k iterations  SOMETHING LIKE THIS
+// take k -> arr.length    arr[length] -k iterations  SOMETHING LIKE THIS 
+//
+// reverse array then range of k then concatenate arr indexes of k range
+
+function consec(strArr, k ) {
+
+}

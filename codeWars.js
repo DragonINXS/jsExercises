@@ -144,7 +144,40 @@ palinSum(87);
 // ==============================================================================================================
   
   
+// Sample inputs and outputs:
 
+// 1 is read as "one 1" => 11
+// 11 is read as "two 1s" => 21
+// 21 is read as "one 2, then one 1" => 1211
+// 9000 is read as "one 9, then 3 0s" => 1930
+// 222222222222 is read as "twelve 2s" => 122
+
+function lookAndSay (n) {
+    strArr = n.toString().split("");
+  
+    let i = 0;
+    let count = 1;
+    let result = [];
+  
+    while(i < strArr.length){
+      if(strArr[i+1] == strArr[i]) {
+        count ++;
+        i++;
+      }
+      if(strArr[i+1] !== strArr[i]){
+        result.push(count);
+        result.push(strArr[i]);
+        count = 1;
+        i++;
+      }
+    }
+    return (Number(result.join("")));
+}
+  
+sayIt(4422666);
+
+
+// ==============================================================================================================
 
 
 

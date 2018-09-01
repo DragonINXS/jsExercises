@@ -117,6 +117,54 @@ function duplicateCount(text){
 
 // ==========================================================================================================
 
+// Add the given number to its palindrome
+// if its sum is a palindrome return the iteration count
+// if its not repeat process with sum and repeat until sum is a palindrome
+
+function revNum(theNumber) {
+    return Number(theNumber.toString().split("").reverse().join(""));
+}
+  
+function palinSum (n) {
+    let num = Number(n);
+    let i = 0;
+
+    while (num !== revNum(num)) {
+        i++;
+        sum = num + revNum(num);
+        num = sum;
+    }
+
+    return i;
+}
+  
+palinSum(87); 
+
+
+// ==============================================================================================================
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Consecutive strings
 

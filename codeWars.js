@@ -200,25 +200,46 @@ function consec(strArr, k ) {
 // ==============================================================================================================
 
 
-// Largest 5 digit number in a series
+// Given a string of words, you need to find the highest scoring word.
 
-// In the following 6 digit number:
+// Each letter of a word scores points according to it's position in the alphabet: a = 1, b = 2, c = 3 etc.
 
-// 283910
+// You need to return the highest scoring word as a string.
 
-// 91 is the greatest sequence of 2 consecutive digits.
+// If two words score the same, return the word that appears earliest in the original string.
 
-// In the following 10 digit number:
+// All letters will be lowercase and all inputs will be valid.
 
-// 1234567890
+// Test.describe("Example tests",_=>{
+//     Test.assertEquals(high('man i need a taxi up to ubud'), 'taxi');
+//     Test.assertEquals(high('what time are we climbing up the volcano'), 'volcano'); 
+//     Test.assertEquals(high('take me to semynak'), 'semynak');  
+//     });
 
-// 67890 is the greatest sequence of 5 consecutive digits.
+'a'.charCodeAt(0) - 96; // returns 1
 
-// Complete the solution so that it returns the greatest sequence of five consecutive digits found within the number given. The number will be passed in as a string of only digits. It should return a five digit integer. The number passed may be as large as 1000 digits.
+let str = 'How are you';
+let res = str.split(" "); // splits words into array
+console.log(res);
 
-// Adapted from ProjectEuler.net
+const word = 'how';
+let wordArr = word.split(''); // splits word into array
+
+console.log(wordArr);
+
+const lettersToNumbers = wordArr.map(eachLetter =>  // turns each letter into a number
+  eachLetter.charCodeAt(0) - 96 
+  // reduce((a,b) => a + b, 0);
+)
+
+console.log(lettersToNumbers);
 
 
-function largest5() {
-    
-}
+let wordSum = lettersToNumbers.reduce((a,b)=> a + b, 0); // adds all numbers in array together
+
+console.log(wordSum);
+
+
+
+
+
